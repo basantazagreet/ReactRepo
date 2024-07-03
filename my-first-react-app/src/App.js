@@ -18,8 +18,17 @@ import LiftingStateUp from './Components/LiftingStateUp/LiftingStateUp';
 import UseMemoDemo from './Components/UseMemoDemo/UseMemoDemo';
 import UseRefDemo from './Components/UseRefDemo/UseRefDemo';
 import HighOrderComponentDemo from './Components/HighOrderComponentDemo/HighOrderComponentDemo';
-
+import FetchDemo from './Components/APIDemo/FetchDemo';
+import PreviousPropsDemo from './Components/PreviousProps/PreviousPropsDemo';
+import StateWithObjects from './Components/StateWithObjects/StateWithObjects';
+import ContextProviderDemo from './Components/ContextAPIDemo/ContextProviderDemo';
 function App() {
+
+  const [count, setCount] = useState(0);
+
+  function changeCount() {
+    setCount(Math.random() * 10);
+  }
 
   //Tells react the function which changes the state
   const [CourseGoals, setCourseGoals] = useState([
@@ -42,6 +51,8 @@ function App() {
   }
 
 
+
+
   return (
     <div className="App">
       <h2>Hello World!!!</h2>
@@ -61,9 +72,17 @@ function App() {
       <Lists />
       <ReusableComponent />
       <LiftingStateUp />
-      <UseMemoDemo/>
-      <UseRefDemo/>
-      <HighOrderComponentDemo/>
+      <UseMemoDemo />
+      <UseRefDemo />
+      <HighOrderComponentDemo />
+      <FetchDemo />
+      <PreviousPropsDemo count={count} />
+      <button onClick={changeCount}>Change props value</button>
+      <StateWithObjects />
+      <ContextProviderDemo />
+
+
+
     </div>
   );
 }

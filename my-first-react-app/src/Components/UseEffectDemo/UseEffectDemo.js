@@ -7,6 +7,8 @@ const UseEffectDemo = () => {
     const [count, setCount] = useState(0);
     const [data, setData] = useState(100);
 
+
+    //The effect will only re-run if one of the dependencies change.
 useEffect(
     ()=> {
         console.log("UseEffect demo: Useeffect on count called");
